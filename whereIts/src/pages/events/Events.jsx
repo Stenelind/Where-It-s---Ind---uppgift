@@ -1,8 +1,12 @@
-import './events.css'
+import Searchfield from '../../components/searchfield/Searchfield';
+import './events.css';
 
 function Events() {
   return (
-    <div>Events</div>
+    <>
+    <h1 className='events-header'>Events</h1>
+    <Searchfield />
+    </>
   )
 }
 

@@ -1,0 +1,8 @@
+.events-header {
+    font-family: var(--font-family-heading-text);
+    font-size: 32px;
+    line-height: 37.28px;
+    color: var(--heading-color);
+    text-align: center;
+    padding-top: 34px;
+}

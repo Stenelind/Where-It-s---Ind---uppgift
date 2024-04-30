@@ -1,6 +1,7 @@
 import './index.css'
 import './App.css'
-import Landingpage from './pages/landingpage/Landingpage';
+// import Landingpage from './pages/landingpage/Landingpage';
+import Events from './pages/events/Events';
 
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
   return (
  
       <div className="app">
-        <Landingpage />
+        {/* <Landingpage /> */}
+        <Events />
       </div>
   )
 }
