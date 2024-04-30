@@ -1,0 +1,71 @@
+.event-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 66px;
+    height: 66px;
+    border: solid 1px #FFFFFF;
+    margin: 2rem 0 0 2rem;
+}
+
+.date {
+    font-family: var(--font-family-default);
+    font-size: 14px;
+    line-height: 16.8px;
+    color: var(--text-color);
+}
+
+.month {
+    font-family: var(--font-family-default);
+    font-size: 14px;
+    line-height: 16.8px;
+    color: var(--text-color);
+}
+
+.artist-container {
+    width: 219px;
+    border-bottom: solid 1px #FFFFFF;
+    margin: 2rem 0 0 1.5rem;
+}
+
+.artist-name {
+    font-family: var(--font-family-default);
+    font-size: 22px;
+    line-height: 26.4px;
+    color: var(--text-color);
+}
+
+.artist-place {
+    font-family: var(--font-family-default);
+    font-size: 12px;
+    line-height: 14.4px;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.artist-time__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: .3rem;
+}
+
+.artist-time {
+    font-family: var(--font-family-default);
+    font-size: 14px;
+    line-height: 16.8px;
+    color: var(--text-color);
+}
+
+.artist-price {
+    font-family: var(--font-family-default);
+    font-size: 17px;
+    line-height: 20.4px;
+    color: var(--number-color);
+}

@@ -4,12 +4,12 @@ function Searchfield() {
     return (
         <section className="form-container">
         <form>
-          <div className="search-box">
+          <div className="search-field">
             <input 
               type="text" 
               placeholder='' 
               aria-label='Sök' 
-              className="search-icon" />
+              className="search-img" />
           </div>
         </form>
       </section>

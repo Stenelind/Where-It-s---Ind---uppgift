@@ -1,0 +1,11 @@
+.eventpager-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.eventpager-img {
+    width: 48px;
+    height: 8px;
+}
