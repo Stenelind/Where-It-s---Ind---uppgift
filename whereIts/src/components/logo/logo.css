@@ -1,0 +1,29 @@
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo-landingPage {
+    width: 182px;
+    height: 178px;
+    margin-bottom: 1rem;
+}
+
+.logo-header {
+    color: var(--heading-color);
+    font-family: var(--font-family-heading-text);
+    font-size: 32px;
+    font-style: italic;
+    line-height: 37.28px;
+    margin-bottom: 1rem;
+}
+
+.logo-text {
+    color: var(--text-color);
+    font-family: var(--font-family-default);
+    font-size: 22px;
+    font-style: italic;
+}

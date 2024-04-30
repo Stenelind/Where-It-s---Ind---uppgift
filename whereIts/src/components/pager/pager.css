@@ -1,0 +1,11 @@
+.pager-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.pager-img {
+    width: 48px;
+    height: 8px;
+}
