@@ -1,7 +1,8 @@
 import './index.css'
 import './App.css'
 // import Landingpage from './pages/landingpage/Landingpage';
-import Events from './pages/events/Events';
+// import Events from './pages/events/Events';
+import Event from './pages/event/Event';
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
  
       <div className="app">
         {/* <Landingpage /> */}
-        <Events />
+        {/* <Events /> */}
+        <Event />
       </div>
   )
 }

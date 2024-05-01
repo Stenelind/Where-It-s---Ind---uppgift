@@ -1,6 +1,6 @@
-import './event.css'
+import './eventcard.css'
 
-function Event() {
+function Eventcard() {
     return (
         <>
             <section className="event-wrapper">
@@ -67,4 +67,4 @@ function Event() {
     )
 }
 
-export default Event
+export default Eventcard

@@ -1,0 +1,18 @@
+.event-header {
+    font-family: var(--font-family-heading-text);
+    font-size: 32px;
+    line-height: 37.28px;
+    color: var(--heading-color);
+    text-align: center;
+    padding-top: 34px;
+}
+
+.event-text {
+    font-family: var(--font-family-default);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 22.8px;
+    color: var(--text-color);
+    text-align: center;
+    padding-top: 2rem;
+}
