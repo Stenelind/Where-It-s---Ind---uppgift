@@ -1,8 +1,9 @@
+import Ticket from '../../components/ticket/Ticket'
 import './tickets.css'
 
 function Tickets() {
   return (
-    <div>Tickets</div>
+    <Ticket />
   )
 }
 
