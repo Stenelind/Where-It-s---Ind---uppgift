@@ -20,6 +20,7 @@
     font-size: 32px;
     color: var(--text-color);
     margin-top: 1rem;
+    text-shadow: 1px 1px 0 rgba(245, 107, 154, 1);
 }
 
 .counter-count {
