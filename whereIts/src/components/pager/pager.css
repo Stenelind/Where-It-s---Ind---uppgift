@@ -1,8 +1,6 @@
 .pager-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
+    position: relative;
+    margin: auto 0 2rem 0;
 }
 
 .pager-img {

@@ -4,10 +4,10 @@ import './landingpage.css'
 
 function Landingpage() {
   return (
-    <>
+    <div className="landing-page-container">
     <Logo />
     <Pager />
-    </>
+    </div>
   )
 }
 
