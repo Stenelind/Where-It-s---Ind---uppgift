@@ -1,8 +1,12 @@
+import Orderoverview from '../../components/orderoverview/Orderoverview'
 import './order.css'
 
 function Order() {
   return (
-    <div>Order</div>
+    <>
+    <h1 className="order-header">Order</h1>
+    <Orderoverview />
+    </>
   )
 }
 

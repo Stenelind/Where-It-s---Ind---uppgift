@@ -1,0 +1,8 @@
+.order-header {
+    font-family: var(--font-family-heading-text);
+    font-size: 32px;
+    line-height: 32.28px;
+    color: var(--heading-color);
+    text-align: center;
+    padding-top: 34px;
+}
