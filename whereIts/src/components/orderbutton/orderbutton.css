@@ -1,0 +1,18 @@
+.orderbutton-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.orderbutton {
+    width: 310px;
+    height: 60px;
+    border-radius: 3px;
+    background-color: var(--number-color);
+    color: var(--text-color);
+    font-family: var(--font-family-default);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.4px;
+    border: none;
+}
