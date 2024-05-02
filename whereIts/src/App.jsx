@@ -1,23 +1,21 @@
 import './index.css'
 import './App.css'
-// import Landingpage from './pages/landingpage/Landingpage';
-// import Events from './pages/events/Events';
-// import Tickets from './pages/tickets/Tickets';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import Events from './pages/events/Events';
 import Event from './pages/event/Event';
-// import Order from './pages/order/Order';
-
 
 function App() {
-
   return (
- 
+    <Router>
       <div className="app">
-        {/* <Landingpage /> */}
-        {/* <Events />  */}
-        <Event />
-        {/* <Order />   */}
-        {/* <Tickets /> */}
+ <Routes>
+          <Route path="/" element={<Outlet />}> {/* Här lägger vi till Outlet */}
+            <Route index element={<Events />} /> {/* Här används index för att specificera rutan för '/' */}
+            <Route path="event/:eventName" element={<Event />} />
+          </Route>
+        </Routes>
       </div>
+    </Router>
   )
 }
 

@@ -48,15 +48,6 @@
     padding-right: 5px;
 }
 
-
-.counter-minus, .counter-plus {
-    width: 20px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
-}
-
 .counter-count {
     display: flex;
     justify-content: space-between;
@@ -65,4 +56,23 @@
     height: 50px;
     border-top: #F56B9A solid 1px;
 }
+
+.counter-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.counter-minus {
+    margin: 0 0 .1rem 1rem;
+}
+
+.counter-plus {
+    margin-right: 1rem;
+}
+
+.counter-number {
+    margin: 0 1rem;
+}
+
 
