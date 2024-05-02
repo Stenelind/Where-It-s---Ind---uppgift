@@ -26,7 +26,7 @@ function Eventcard() {
     return (
         <>
             {events.slice(0, 4).map((event, index) => (
-                <Link key={event.id || event.name || index} to={`/event/${encodeURIComponent(event.name)}`}>
+                <Link key={event.id || event.name || index} to={`/events/event/${encodeURIComponent(event.name)}`}>
                     <section className="event-wrapper">
                         <section className="date-container">
                             <p className="date">{event.when.date.split(' ')[0]}</p>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './counter.css';
 
 function Counter({ price }) {
-    const [count, setCount] = useState(0); // Tillstånd för räknaren
+    const [count, setCount] = useState(0); 
 
     // Funktion för att öka räknaren
     const increment = () => {
