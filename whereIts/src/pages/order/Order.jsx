@@ -29,7 +29,6 @@ function Order() {
   console.log(totalPrice);
   console.log("Count:", count);
   console.log("Event Price:", currentEvent.price);
-
   return (
     <>
       <h1 className="order-header">Order</h1>

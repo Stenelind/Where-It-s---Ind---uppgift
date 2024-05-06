@@ -1,5 +1,6 @@
 .ordersum-container {
-    position: sticky;
+    position: relative;
+    top: 15rem;
 }
 
 .ordersum-text {
@@ -9,7 +10,7 @@
     line-height: 22.8px;
     text-align: center;
     color: #FFFFFFCC;
-    margin-top: 16rem;
+    margin-top: 2rem;
 }
 
 .ordersum-sum {
