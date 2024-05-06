@@ -10,6 +10,7 @@ const useStore = create((set) => ({
     setCurrentEvent: (event) => set({ currentEvent: event }),
     increment: () => set((state) => ({ count: state.count + 1, totalPrice: (state.count + 1) * (state.currentEvent ? state.currentEvent.price : 0) })),
     decrement: () => set((state) => ({ count: state.count > 0 ? state.count - 1 : 0, totalPrice: (state.count > 0 ? state.count - 1 : 0) * (state.currentEvent ? state.currentEvent.price : 0) })),
+    
     fetchEvents: () => {
         axios.get('https://santosnr6.github.io/Data/events.json')
             .then(response => {

@@ -12,6 +12,7 @@ function Event() {
   const { events, currentEvent, setCurrentEvent } = useStore(); 
   const [count, setCount] = useState(0);
 
+
   const handleButtonClick = () => {
     navigate('/order', { state: { orderCount: count, event: currentEvent } });
   };
