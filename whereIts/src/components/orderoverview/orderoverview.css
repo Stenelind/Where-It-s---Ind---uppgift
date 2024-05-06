@@ -55,15 +55,6 @@
     padding-right: 5px;
 }
 
-
-.orderoverview-minus, .orderoverview-plus {
-    width: 16px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
-}
-
 .orderoverview-count {
     display: flex;
     justify-content: space-between;
@@ -72,4 +63,23 @@
     height: 36.92px;
     border-top: #F56B9A solid 1px;
 }
+
+.orderoverview-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.orderoverview-minus {
+    margin: 0 0 .2rem 1rem;
+}
+
+.orderoverview-plus {
+    margin-right: 1rem;
+}
+
+.orderoverview-number {
+    margin: 0 1rem;
+}
+
 

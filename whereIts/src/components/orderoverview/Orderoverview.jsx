@@ -1,40 +1,38 @@
-import './orderoverview.css'
+import { useLocation } from 'react-router-dom';
+import './orderoverview.css';
+import useStore from '../../apistore';
 
 function Orderoverview() {
-  return (
-    <section className="orderoverview-wrapper">
-    <section className="orderoverview-container">
-        <p className="orderoverview-artist">Lasse-Stefanz</p>
-        <p className="orderoverview-time">21 mars kl 19.00 - 21.00</p>
-        <section className="orderoverview-count">
-            <img src="./assets/minus.png" alt="Img minus" className="orderoverview-minus" />
-            <p className="orderoverview-number">3</p>
-            <img src="./assets/plus.png" alt="Img plus" className="orderoverview-plus" />
-        </section>
-    </section>
+    const { count, increment, decrement } = useStore(state => ({
+        count: state.count,
+        increment: state.increment,
+        decrement: state.decrement
+    }));
+        
+    const location = useLocation();
+    const { event } = location.state; 
+    
+    if (!event) {
+        return null; 
+    }
 
-    <section className="orderoverview-container">
-        <p className="orderoverview-artist">Pelle trubadur</p>
-        <p className="orderoverview-time">29 mars kl 22.00 - 00.00</p>
-        <section className="orderoverview-count">
-            <img src="./assets/minus.png" alt="Img minus" className="orderoverview-minus" />
-            <p className="orderoverview-number">2</p>
-            <img src="./assets/plus.png" alt="Img plus" className="orderoverview-plus" />
+    return (
+        <section className="orderoverview-wrapper">
+            <section className="orderoverview-container">
+                <p className="orderoverview-artist">{event.name}</p>
+                <p className="orderoverview-time">{event.when.date + ' ' + event.when.from + ' - ' + event.when.to}</p>
+                <section className="orderoverview-count">
+                    <button onClick={decrement} className="orderoverview-button">
+                        <img src='/assets/minus.png' alt="Minus" className="orderoverview-minus" />
+                    </button>
+                    <p className="orderoverview-number">{count}</p> 
+                    <button onClick={increment} className="orderoverview-button">
+                        <img src='/assets/plus.png' alt="Plus" className="orderoverview-plus" />
+                    </button>
+                </section>
+            </section>
         </section>
-    </section>
-
-    <section className="orderoverview-container">
-        <p className="orderoverview-artist">Klubb Untz</p>
-        <p className="orderoverview-time">17 april kl 22.00 - 00:00</p>
-        <section className="orderoverview-count">
-            <img src="./assets/minus.png" alt="Img minus" className="orderoverview-minus" />
-            <p className="orderoverview-number">1</p>
-            <img src="./assets/plus.png" alt="Img plus" className="orderoverview-plus" />
-        </section>
-    </section>
-
-</section>
-  )
+    );
 }
 
-export default Orderoverview
+export default Orderoverview;

@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
 import './counter.css';
+import useStore from '../../apistore';  
 
 function Counter({ price }) {
-    const [count, setCount] = useState(0); 
-
-    // Funktion för att öka räknaren
-    const increment = () => {
-        setCount(count + 1);
-    };
-
-    // Funktion för att minska räknaren, med villkor att den inte kan gå under 0
-    const decrement = () => {
-        if (count > 0) {
-            setCount(count - 1);
-        }
-    };
+    const { count,  increment, decrement } = useStore(state => ({
+        count: state.count,
+        increment: state.increment,
+        decrement: state.decrement
+    }));
 
     return (
         <section className="counter-wrapper">
