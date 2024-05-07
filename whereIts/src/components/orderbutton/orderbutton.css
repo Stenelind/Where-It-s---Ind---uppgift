@@ -1,9 +1,9 @@
 .orderbutton-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 16rem;
+    margin-left: 2rem;
+    position: absolute;
+    bottom: 12rem;
 }
 
 .orderbutton {

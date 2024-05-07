@@ -8,17 +8,17 @@ function Landingpage() {
   const navigate = useNavigate();
   const handlers = useSwipeable({
     onSwipedLeft: () => navigate('/events'), // Navigera till Events när användaren swipar åt vänster
-    onSwipedRight: () => navigate('/another-route'), // Ändra till din önskade route
+    onSwipedRight: () => navigate('/'), // Ändra till din önskade route
     preventDefaultTouchmoveEvent: true,
     trackMouse: true
   });
   return (
-    <div {...handlers} className="swipe-area">
-    <div className="landing-page-container">
+    <section {...handlers} className="swipe-area">
+    <section className="landing-page-container">
     <Logo />
     <Pager />
-    </div>
-    </div>
+    </section>
+    </section>
   )
 }
 

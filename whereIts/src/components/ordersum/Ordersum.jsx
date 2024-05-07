@@ -1,8 +1,10 @@
-import './ordersum.css'
-import useStore from '../../apistore';
+import './ordersum.css';
+import useOrderStore from '../../orderStore';
 
 function Ordersum() {
-  const totalPrice = useStore(state => state.totalPrice);
+  const totalPrice = useOrderStore(state => {
+    return state.orderedEvents.reduce((total, event) => total + event.totalPrice, 0);
+  });
   
   return (
     <section className="ordersum-container">
@@ -12,4 +14,4 @@ function Ordersum() {
   )
 }
 
-export default Ordersum
+export default Ordersum;

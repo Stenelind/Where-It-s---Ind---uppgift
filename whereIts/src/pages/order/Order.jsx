@@ -1,45 +1,59 @@
-import React, { useState } from 'react';
-import Orderbutton from '../../components/orderbutton/Orderbutton'
+import './order.css';
+import React, { useState, useEffect } from 'react';
+import Orderbutton from '../../components/orderbutton/Orderbutton';
 import Orderoverview from '../../components/orderoverview/Orderoverview';
 import Ordersum from '../../components/ordersum/Ordersum';
-import useStore from '../../apistore'; 
-import './order.css';
+import useStore from '../../apistore';
+import useOrderStore from '../../orderStore'; 
 
 function Order() {
-  const { currentEvent } = useStore();
-  const [count, setCount] = useState(1); 
+  const { currentEvent, setCurrentEvent } = useStore();
+  const { orderedEvents, addEventToOrder } = useOrderStore();
+  const [count, setCount] = useState(1);
 
-  const increment = () => {
-    setCount(count + 1);
+  useEffect(() => {
+    // Uppdatera komponenten när orderedEvents ändras
+  }, [orderedEvents]);
+
+  const handleEventSelection = (event) => {
+    setCurrentEvent(event); // Sätt det aktuella evenemanget
   };
 
-  const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
+  const handleAddToOrder = () => {
+    if (!currentEvent) {
+      return; // Om inget event är valt, avsluta funktionen
     }
-  };  
 
-  // Beräkna totalpriset baserat på antal biljetter och pris per biljett
-  const totalPrice = currentEvent && currentEvent.price ? count * currentEvent.price : 0;
+    // Kontrollera om eventet redan finns i ordern
+    const isEventInOrder = orderedEvents.some((orderedEvent) => orderedEvent.id === currentEvent.id);
+    if (isEventInOrder) {
+      window.alert('Detta event finns redan i din order.'); 
+    } else {
+      addEventToOrder(currentEvent); // Lägg till eventet i ordern
+    }
+  };
 
   if (!currentEvent) {
     return <div>Laddar eventinformation...</div>;
   }
-
-  console.log(totalPrice);
-  console.log("Count:", count);
-  console.log("Event Price:", currentEvent.price);
+  
   return (
     <>
       <h1 className="order-header">Order</h1>
-      <Orderoverview 
-        event={currentEvent} 
-        orderCount={count}  
-        increment={increment} 
-        decrement={decrement}
-      />
-      <Ordersum /> 
-      <Orderbutton />
+      <div className="order-overviews">
+        {orderedEvents.slice(0, 3).map((orderedEvent, index) => (
+          <Orderoverview
+            key={`${orderedEvent.id}-${index}`} // Unik nyckel för varje event
+            event={orderedEvent}
+            orderCount={count}
+            increment={() => {}}
+            decrement={() => {}}
+            onEventSelection={handleEventSelection}
+          />
+        ))}
+      </div>
+      <Ordersum />
+      <Orderbutton onClick={handleAddToOrder} /> {/* Anropa handleAddToOrder */}
     </>
   )
 }

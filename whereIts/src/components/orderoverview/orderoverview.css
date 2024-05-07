@@ -1,5 +1,5 @@
 .orderoverview-wrapper {
-    margin-top: 4rem;
+    margin-top: .5rem;
 }
 
 .orderoverview-container {
@@ -19,7 +19,7 @@
     font-weight: 700;
     font-size: 24px;
     color: var(--heading-color);
-    margin: .2rem 0 0 .5rem;
+    margin: .3rem 0 0 .5rem;
 }
 
 .orderoverview-time {
@@ -27,15 +27,8 @@
     font-size: 14px;
     line-height: 16.8px;
     color: var(--number-color);
-    margin: .3rem 0 .1rem .5rem;
+    margin: 0 0 .1rem .5rem;
 }
-
-.orderoverview-count {
-    display: flex;
-    width: 100%;
-    height: 50px; 
-}
-
 
 .orderoverview-number {
     flex: auto; 

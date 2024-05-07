@@ -12,17 +12,20 @@ function Event() {
   const { events, currentEvent, setCurrentEvent } = useStore(); 
   const [count, setCount] = useState(0);
 
-
-  const handleButtonClick = () => {
-    navigate('/order', { state: { orderCount: count, event: currentEvent } });
-  };
-
   useEffect(() => {
     const event = events.find(e => e.name === decodeURIComponent(eventName));
     if(event) {
       setCurrentEvent(event);
     }
   }, [eventName, events, setCurrentEvent]);
+
+  const handleAddEvent = (newEvent) => {
+    addEventToOrder(newEvent); // Uppdaterat här
+  };
+
+  const handleButtonClick = () => {
+    navigate('/order', { state: { orderCount: count, event: currentEvent } });
+  };
 
   const increment = () => {
     setCount(count + 1);
@@ -43,7 +46,7 @@ function Event() {
       <h1 className="event-header">Event</h1>
       <p className="event-text">You are about to score <br/> some tickets to</p>
       <Eventticket event={currentEvent} />
-      <Counter price={currentEvent.price} count={count} setCount={setCount} increment={increment} decrement={decrement}/>
+      <Counter price={currentEvent.price} eventId={currentEvent.id} count={count} setCount={setCount} increment={increment} decrement={decrement} />
       <Button onClick={handleButtonClick} /> 
     </>
   );

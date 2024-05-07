@@ -1,11 +1,13 @@
 .ordersum-container {
-    position: relative;
-    top: 15rem;
+    position: absolute;
+    margin-left: 6rem;
+    bottom: 16.5rem;
 }
 
 .ordersum-text {
     font-family: var(--font-family-default);
     font-size: 19px;
+    font-weight: 400;
     font-style: italic;
     line-height: 22.8px;
     text-align: center;
