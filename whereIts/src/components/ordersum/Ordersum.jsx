@@ -1,5 +1,5 @@
 import './ordersum.css';
-import useOrderStore from '../../orderStore';
+import useOrderStore from '../../useStateStore';
 
 function Ordersum() {
   const totalPrice = useOrderStore(state => {

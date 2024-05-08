@@ -16,3 +16,12 @@
     text-align: center;
     padding-top: 2rem;
 }
+
+.event-loader {
+    font-family: var(--font-family-heading-text);
+    font-size: 28px;
+    line-height: 32.28px;
+    color: var(--heading-color);
+    text-align: center;
+    padding-top: 34px;
+}

@@ -8,20 +8,18 @@ import './events.css';
 function Events() {
   const navigate = useNavigate();
   const handlers = useSwipeable({
-    onSwipedLeft: () => navigate(''), // Navigera till Events när användaren swipar åt vänster
-    onSwipedRight: () => navigate('/'), // Ändra till din önskade route
+    onSwipedLeft: () => navigate('/Event'), // Navigera till Events när användaren swipar åt vänster
+    onSwipedRight: () => navigate('/Events/'), // Ändra till din önskade route
     preventDefaultTouchmoveEvent: true,
     trackMouse: true
   });
   return (
-    <>
       <section {...handlers} className="swipe-area">
         <h1 className='events-header'>Events</h1>
         <Searchfield />
         <Eventcard />
         <Eventpager />
       </section>
-    </>
   )
 }
 

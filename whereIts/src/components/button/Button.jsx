@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Button() {
   const navigate = useNavigate();
-  const { currentEvent, resetCount } = useStore(); // Hämta resetCount från useStore
-  const orderedEvents = useOrderStore(state => state.orderedEvents);
+  const { currentEvent, resetCount } = useStore(); 
+  const orderedEvents = useOrderStore(state => state.orderedEvents || []); // Säkerställ att orderedEvents är en array
 
   const handleButtonClick = () => {
     if (!currentEvent) {
@@ -15,6 +15,7 @@ function Button() {
       return;
     }
 
+    // Hämta orderedEvents från state
     const isEventInOrder = orderedEvents.some((orderedEvent) => orderedEvent.id === currentEvent.id);
     if (isEventInOrder) {
       window.alert('Detta event finns redan i din order.');
@@ -23,7 +24,7 @@ function Button() {
         orderedEvents: [...state.orderedEvents, currentEvent]
       }));
       
-      resetCount(); // Använd resetCount för att återställa count
+      resetCount(); 
       navigate('/order');
     }
   };

@@ -1,5 +1,5 @@
 import './counter.css';
-import useStore from '../../apistore';  
+import useStore from '../../useApiStore';  
 
 function Counter({ price, eventId }) {
     const { count, increment, decrement } = useStore(state => ({

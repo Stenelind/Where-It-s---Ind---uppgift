@@ -1,11 +1,11 @@
-import './orderbutton.css'
+import './orderbutton.css';
 
-function Orderbutton() {
+function Orderbutton({ onClick }) { 
   return (
     <section className="orderbutton-container">
-    <button className='orderbutton'>Skicka order</button>
+      <button className='orderbutton' onClick={onClick}>Skicka order</button>
     </section>
-  )
+  );
 }
 
-export default Orderbutton
+export default Orderbutton;

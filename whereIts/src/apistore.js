@@ -28,7 +28,7 @@ const useStore = create((set) => ({
     return { events: newEvents };
   }),
 
-  resetCount: () => set({ count: 0 }), // Lägg till resetCount-funktionen här
+  resetCount: () => set({ count: 0 }), 
 
   fetchEvents: () => {
     axios.get('https://santosnr6.github.io/Data/events.json')
