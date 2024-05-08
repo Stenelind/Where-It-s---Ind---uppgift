@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
-import useApiStore from '../../useApiStore';
-import useStateStore from '../../useStateStore';
 import './order.css';
 import Orderbutton from '../../components/orderbutton/Orderbutton';
 import Orderoverview from '../../components/orderoverview/Orderoverview';
 import Ordersum from '../../components/ordersum/Ordersum';
+import useStore from '../../apistore';
+import useOrderStore from '../../orderStore';
 import Tickets from '../tickets/Tickets';
 
 function Order() {
-  const { currentEvent, setCurrentEvent } = useApiStore();
-  const { orderedEvents } = useStateStore(); 
+  const { currentEvent, setCurrentEvent } = useStore();
+  const { orderedEvents } = useOrderStore(); 
   const [showTickets, setShowTickets] = useState(false);
 
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import './orderoverview.css';
-import useOrderStore from '../../useStateStore'; 
+import useOrderStore from '../../orderStore'; 
 
 function Orderoverview({ event }) {
   const orderedEvent = useOrderStore(state => state.orderedEvents.find(e => e.id === event.id));
