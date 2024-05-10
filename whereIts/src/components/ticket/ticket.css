@@ -1,0 +1,154 @@
+.ticket-wrapper {
+    padding-top: 20%;
+}
+
+.ticket-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 311px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.ticket-qrcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    background-color: #0000001F;
+    position: relative;
+}
+
+.ticket-qrImg {
+    width: 50%;
+    height: 60px;
+}
+
+.ticket-qrText {
+    font-family: var(--font-family-default);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.4px;
+    letter-spacing: .2rem;
+    color: #00000066;
+    position: absolute;
+    margin-top: 5.5rem;
+}
+
+.ticket-info {
+    width: 100%;
+    height: 60px;
+}
+
+.ticket-info__seat {
+    font-family: var(--font-family-default);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.4px;
+    color: #00000099;
+    margin: .5rem 0 0 1rem;
+}
+
+.ticket-time {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+}
+
+.ticket-date {
+    border-bottom: dotted 2px #00000066;
+    width: 104px;
+}
+
+.ticket-header {
+    font-family: var(--font-family-default);
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 12px;
+    color: #00000066;
+    margin: .5rem 0 0 1rem;
+}
+
+.ticket-when {
+    font-family: var(--font-family-default);
+    font-size: 18px;
+    font-weight: 600;
+    color: #00000099;
+    margin: .5rem 0 0 1rem;
+}
+
+.ticket-from {
+    border-left: dotted 2px #00000066;
+    border-bottom: dotted 2px #00000066;
+    width: 104px;
+}
+
+.ticket-to {
+    border-left: dotted 2px #00000066;
+    border-bottom: dotted 2px #00000066;
+    width: 104px;
+}
+
+.ticket-where {
+    width: 100%;
+    height: 120px;
+    border-top: dotted 2px #00000066;
+    border-bottom: dotted 2px #00000066;
+}
+
+.ticket-where__header {
+    font-family: var(--font-family-default);
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 12px;
+    color: #00000066;
+    margin: .8rem 0 0 1rem;
+}
+
+.ticket-where__place {
+    font-family: var(--font-family-default);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.6px;
+    color: #000000B2;
+    margin: .8rem 0 0 1rem;
+}
+
+.ticket-where__adress {
+    font-family: var(--font-family-default);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.4px;
+    color: #00000099;
+    margin: .3rem 0 0 1rem;
+}
+
+.ticket-what {
+    width: 100%;
+    height: 90px;
+}
+
+.ticket-what__header {
+    font-family: var(--font-family-default);
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 12px;
+    color: #00000066;
+    margin: .8rem 0 0 1rem;
+}
+
+.ticket-artist {
+    font-family: var(--font-family-heading-text);
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 30.29px;
+    color: var(--heading-color);
+    margin: .5rem 0 0 1rem;
+}

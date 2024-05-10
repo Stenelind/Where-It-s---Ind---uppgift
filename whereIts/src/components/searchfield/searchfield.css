@@ -1,0 +1,17 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+  } 
+  .search-img {
+    width: 310px;
+    height: 40px;
+    background-color:  #FFFFFF1A;
+    background-image: url('./assets/search.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 35px;
+    margin-top: 36px;
+    border: none;
+    border-radius: 3px;
+    background-size: 20px 20px;
+  }

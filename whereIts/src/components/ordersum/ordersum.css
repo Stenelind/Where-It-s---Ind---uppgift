@@ -1,0 +1,27 @@
+.ordersum-container {
+    width: 100%;
+    position: absolute;
+    top: 34rem;
+}
+
+.ordersum-text {
+    font-family: var(--font-family-default);
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 22.8px;
+    text-align: center;
+    color: #FFFFFFCC;
+    margin-top: 2rem;
+}
+
+.ordersum-sum {
+    font-family: var(--font-family-default);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.4px;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: .7rem;
+    text-shadow: 1px 1px 0 rgba(245, 107, 154, 1);
+}

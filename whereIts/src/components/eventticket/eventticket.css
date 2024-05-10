@@ -1,0 +1,32 @@
+.eventticket-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.eventticket-artist {
+    font-family: var(--font-family-heading-text);
+    font-size: 35px;
+    line-height: 40.78px;
+    color: var(--heading-color);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.eventticket-time {
+    font-family: var(--font-family-default);
+    font-size: 19px;
+    line-height: 22.8px;
+    color: var(--number-color);
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.eventticket-place {
+    font-family: var(--font-family-default);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 19.2px;
+    color: #FFFFFFCC;
+    text-align: center;
+    margin-top: .5rem;
+}

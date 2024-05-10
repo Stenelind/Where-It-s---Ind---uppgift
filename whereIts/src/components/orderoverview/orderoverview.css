@@ -1,0 +1,78 @@
+.orderoverview-wrapper {
+    margin-top: .5rem;
+}
+
+.orderoverview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between; 
+    margin: 1rem auto;
+    width: 310px;
+    height: 96px;
+    border: solid 2px #F56B9A;
+    border-radius: 3px;
+}
+
+.orderoverview-artist {
+    font-family: var(--font-family-default);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--heading-color);
+    margin: .3rem 0 0 .5rem;
+}
+
+.orderoverview-time {
+    font-family: var(--font-family-default);
+    font-size: 14px;
+    line-height: 16.8px;
+    color: var(--number-color);
+    margin: 0 0 .1rem .5rem;
+}
+
+.orderoverview-number {
+    flex: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family-default);
+    font-size: 28px;
+    line-height: 33.6px;
+    color: var(--text-color);
+    text-align: center;
+    border-left: solid 1px #F56B9A;
+    border-right: solid 1px #F56B9A;
+    height: 36.92px; 
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.orderoverview-count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 36.92px;
+    border-top: #F56B9A solid 1px;
+}
+
+.orderoverview-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.orderoverview-minus {
+    margin: 0 0 .2rem 1rem;
+}
+
+.orderoverview-plus {
+    margin-right: 1rem;
+}
+
+.orderoverview-number {
+    margin: 0 1rem;
+}
+
+
