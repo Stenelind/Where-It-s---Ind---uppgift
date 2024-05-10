@@ -8,6 +8,7 @@ const useStore = create((set) => ({
   totalPrice: 0,
 
   setCurrentEvent: (event) => set({ currentEvent: event }),
+  
   increment: (eventId) => set((state) => {
     const newEvents = state.events.map(event => {
       if(event.id === eventId) {

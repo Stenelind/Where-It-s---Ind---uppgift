@@ -1,7 +1,7 @@
 .ordersum-container {
+    width: 100%;
     position: absolute;
-    margin-left: 6rem;
-    bottom: 16.5rem;
+    top: 34rem;
 }
 
 .ordersum-text {

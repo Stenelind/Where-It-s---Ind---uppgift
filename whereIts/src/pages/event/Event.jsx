@@ -6,12 +6,14 @@ import Eventticket from '../../components/eventticket/Eventticket';
 import Counter from '../../components/counter/Counter';
 import Button from '../../components/button/Button';
 import './event.css';
+import useOrderStore from '../../orderStore';
 
 function Event() {
   const { eventName } = useParams();
   const { events, currentEvent, setCurrentEvent } = useStore();
   const [count, setCount] = useState(0);
-
+  const { showOrderOverview, setShowOrderOverview } = useOrderStore(); // Hämta setShowOrderOverview
+  
   const navigate = useNavigate();
   const handlers = useSwipeable({
     onSwipedLeft: () => navigate('/Order'), 
@@ -28,7 +30,12 @@ function Event() {
   }, [eventName, events, setCurrentEvent]);
 
   const handleButtonClick = () => {
-    navigate('/order', { state: { orderCount: count, event: currentEvent } });
+    if (showOrderOverview || count === 0) {
+      navigate('/order', { state: { orderCount: count, event: currentEvent } });
+    } else {
+      setShowOrderOverview(true);
+      navigate('/order');
+    }
   };
 
   const increment = () => {

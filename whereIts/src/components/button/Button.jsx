@@ -6,26 +6,29 @@ import { useNavigate } from 'react-router-dom';
 
 function Button() {
   const navigate = useNavigate();
-  const { currentEvent, resetCount } = useStore(); 
-  const orderedEvents = useOrderStore(state => state.orderedEvents || []); // Säkerställ att orderedEvents är en array
+  const { currentEvent, resetCount } = useStore();
+  const { orderedEvents } = useOrderStore(); 
 
   const handleButtonClick = () => {
+    console.log('Current Event:', currentEvent);
+    console.log('Ordered Events:', orderedEvents);
+
     if (!currentEvent) {
       console.log("No event selected");
       return;
     }
 
-    // Hämta orderedEvents från state
-    const isEventInOrder = orderedEvents.some((orderedEvent) => orderedEvent.id === currentEvent.id);
-    if (isEventInOrder) {
-      window.alert('Detta event finns redan i din order.');
-    } else {
+    // Kontrollera om ordern är tom
+    if (orderedEvents.length === 0 || !orderedEvents.some((orderedEvent) => orderedEvent.id === currentEvent.id)) {
+      // Lägg till evenemanget om ordern är tom eller om evenemanget inte redan finns i ordern
       useOrderStore.setState(state => ({
         orderedEvents: [...state.orderedEvents, currentEvent]
       }));
-      
-      resetCount(); 
-      navigate('/order');
+      resetCount(); // Nollställ räknaren
+      navigate('/order'); // Navigera till order
+    } else {
+      // Om evenemanget redan finns i ordern, visa ett felmeddelande
+      window.alert('Detta event finns redan i din order.');
     }
   };
 

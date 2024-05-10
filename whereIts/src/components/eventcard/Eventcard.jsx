@@ -1,38 +1,27 @@
-import React, { useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom'; 
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import useStore from '../../apistore.js';
 import './eventcard.css';
 
-
 function Eventcard() {
-    const { events, fetchEvents, getEventByName } = useStore((state) => ({
-        events: state.events,
-        fetchEvents: state.fetchEvents,
-        getEventByName: state.getEventByName
-    }));
-
-    const fetchEventsMemo = useCallback(() => {
-        fetchEvents();
-    }, [fetchEvents]);  
+    const { events, fetchEvents } = useStore();
 
     useEffect(() => {
-        fetchEventsMemo();
-    }, [fetchEventsMemo]);  
+        fetchEvents(); // Hämta evenemang från API:et
+    }, [fetchEvents]);
 
-    if (events.length === 0) {
+    if (!events) {
         return <div>Loading events...</div>;
     }
 
     return (
         <>
-            {events.slice(0, 4).map((event, index) => (
-                <Link key={event.id || event.name || index} to={`/events/event/${encodeURIComponent(event.name)}`}>
+            {events.map((event) => (
+                <Link key={event.id} to={`/events/event/${encodeURIComponent(event.name)}`}>
                     <section className="event-wrapper">
                         <section className="date-container">
                             <p className="date">{event.when.date.split(' ')[0]}</p>
-                            <p className="month">
-                                {event.when.date.split(' ')[1].substring(0, 3).toUpperCase()}
-                            </p>
+                            <p className="month">{event.when.date.split(' ')[1].substring(0, 3).toUpperCase()}</p>
                         </section>
                         <section className="artist-container">
                             <h3 className="artist-name">{event.name}</h3>
@@ -46,7 +35,7 @@ function Eventcard() {
                 </Link>
             ))}
         </>
-    )
+    );
 }
 
 export default Eventcard;

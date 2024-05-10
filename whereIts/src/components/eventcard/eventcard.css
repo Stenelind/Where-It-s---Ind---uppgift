@@ -1,5 +1,6 @@
 .event-wrapper {
     display: flex;
+    justify-content: center;
     flex-direction: row;
 }
 
@@ -12,7 +13,7 @@
     height: 66px;
     border: solid 1px #FFFFFF;
     border-radius: 3px;
-    margin: 2rem 0 0 2rem;
+    margin-top: 2rem;
 }
 
 .date {

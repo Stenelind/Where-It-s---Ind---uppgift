@@ -1,5 +1,4 @@
 import Logo from '../../components/logo/Logo'
-import Pager from '../../components/pager/Pager'
 import './landingpage.css'
 import { useSwipeable } from 'react-swipeable';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +15,6 @@ function Landingpage() {
     <section {...handlers} className="swipe-area">
     <section className="landing-page-container">
     <Logo />
-    <Pager />
     </section>
     </section>
   )

@@ -1,56 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import './order.css';
 import Orderbutton from '../../components/orderbutton/Orderbutton';
 import Orderoverview from '../../components/orderoverview/Orderoverview';
 import Ordersum from '../../components/ordersum/Ordersum';
-import useStore from '../../apistore';
 import useOrderStore from '../../orderStore';
 import Tickets from '../tickets/Tickets';
 
 function Order() {
-  const { currentEvent, setCurrentEvent } = useStore();
-  const { orderedEvents } = useOrderStore(); 
-  const [showTickets, setShowTickets] = useState(false);
-
   const navigate = useNavigate();
+  const { orderedEvents, showOrderOverview, setShowOrderOverview } = useOrderStore();
+  const [showTickets, setShowTickets] = useState(false);
+  
   const handlers = useSwipeable({
-    onSwipedLeft: () => navigate('/tickets'), // Navigera till Events när användaren swipar åt vänster
-    onSwipedRight: () => navigate('/Event/'), // Ändra till din önskade route
+    onSwipedLeft: () => navigate('/tickets'), 
+    onSwipedRight: () => navigate('/Events/'), 
     preventDefaultTouchmoveEvent: true,
     trackMouse: true
   });
 
+  useEffect(() => {
+    // Uppdatera komponenten när orderedEvents ändras
+  }, [orderedEvents]);
+
+  const setCurrentEvent = (event) => {
+    // Funktionen som sätter den aktuella händelsen
+  };
+
   const handleOrderButtonClick = async () => {
     if (orderedEvents.length > 0) {
       setShowTickets(true);
+      setShowOrderOverview(false);
       navigate('/tickets');
     } else {
       window.alert('Your order is empty.');
     }
   };
 
-  if (!currentEvent) {
-    return <section className="order-loader">Loading event information...</section>;
-  }
 
   return (
     <section {...handlers} className="swipe-area">
       <h1 className="order-header">Order</h1>
       <div className="order-overviews">
-        {orderedEvents.slice(0, 3).map((orderedEvent, index) => (
+        {showOrderOverview && orderedEvents.map((orderedEvent, index) => (
           <Orderoverview
             key={`${orderedEvent.id}-${index}`}
             event={orderedEvent}
             onEventSelection={setCurrentEvent}
           />
         ))}
+        <Ordersum />
+        <Orderbutton onClick={handleOrderButtonClick} />
+        {showTickets && <Tickets />}
       </div>
-      <Ordersum />
-      <Orderbutton onClick={handleOrderButtonClick} />
-      
-      {showTickets && <Tickets />}
     </section>
   );
 }

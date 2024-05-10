@@ -5,6 +5,7 @@ import './ticket.css';
 const memo = {};
 
 function Ticket({ event, seat }) {
+
   // Generera ett unikt ID för biljetten
   const generateQrID = () => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -21,7 +22,7 @@ function Ticket({ event, seat }) {
       return memo[eventId];
     }
 
-    const items = ['bring booze', 'bring sunglasses', 'bring umbrella'];
+    const items = ['bring booze', 'bring sunglasses', 'bring umbrella', 'bring earplugs'];
     const randomItem = items[Math.floor(Math.random() * items.length)];
 
     // Spara det genererade itemet för det aktuella eventet
@@ -45,6 +46,8 @@ function Ticket({ event, seat }) {
         return 'Solskensvägen 1, Ljusdalen, Glitterbyn 00001';
       case 'Götaplatsen':
         return 'Bakgatan 5, Framsidan, Ovansidan 20202';
+      case 'Kungliga operan':
+        return 'Gustav Adolfs torg 2, 111 52 Stockholm';
       default:
         return 'Okänd adress';
     }
@@ -88,7 +91,7 @@ function Ticket({ event, seat }) {
         </section>
         <section className="ticket-qrcode">
           <img src="./assets/qrcode.png" className='ticket-qrImg' alt="qr" />
-          <p className="ticket-qrText">{qrID}</p> 
+          <p className="ticket-qrText">{qrID}</p>
         </section>
       </section>
     </section>

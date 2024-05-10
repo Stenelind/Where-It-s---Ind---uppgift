@@ -1,9 +1,10 @@
 .orderbutton-container {
     display: flex;
     justify-content: center;
-    margin-left: 2rem;
+    align-items: center;
+    width: 100%;
     position: absolute;
-    bottom: 12rem;
+    top: 42rem;
 }
 
 .orderbutton {
